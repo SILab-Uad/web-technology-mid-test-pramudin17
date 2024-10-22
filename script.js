@@ -31,6 +31,7 @@ const generatePassword = (length, options) => {
 };
 
 // TODO: Add event listener to the button to call generatePassword and display the output
+
 document.getElementById('generateBtn').addEventListener('click', () => {
     const length = parseInt(document.getElementById('length').value, 10);
     const options = {
@@ -43,16 +44,19 @@ document.getElementById('generateBtn').addEventListener('click', () => {
     const password = generatePassword(length, options);
     document.getElementById('passwordOutput').textContent = password;
 });
+
 // BONUS: Implement the copy to clipboard functionality
+
 document.getElementById('copyBtn').addEventListener('click', () => {
     const passwordOutput = document.getElementById('passwordOutput').textContent;
     if (passwordOutput) {
         navigator.clipboard.writeText(passwordOutput).then(() => {
-            alert('BERHASIL DI COPY BANG');
+            alert('Password copied to clipboard!');
         }).catch(err => {
-            console.error('COBA LAGI, BISMILLAH: ', err);
+            console.error('Could not copy text: ', err);
         });
     } else {
-        alert('TIDAK ADA PASSWORD YANG DI COPY BANG ');
+        alert('No password to copy!');
     }
 });
+
