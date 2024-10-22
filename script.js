@@ -15,6 +15,7 @@ const generatePassword = (length, options) => {
     if (options.LogoSpesial) charSet += LogoSpesial;
 
     if(charSet === "") return "minimal masukin satu pilihan.";
+    
     let password =  "";
 
 
